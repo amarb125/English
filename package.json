@@ -1,0 +1,28 @@
+{
+  "name": "english-coach",
+  "version": "1.0.0",
+  "description": "Say a sentence in your language, learn how it is framed in English and why",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amarb125/English.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amarb125/English/issues"
+  },
+  "homepage": "https://github.com/amarb125/English#readme",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.10.0",
+    "express": "^5.3.0",
+    "zod": "^4.6.7"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  }
+}
