@@ -29,7 +29,18 @@ Open http://localhost:3000.
 
 Optional environment variables: `PORT` (default 3000), `CLAUDE_MODEL` (default `claude-opus-5-5`).
 
+## Put it online with Vercel (open it on your phone)
+
+1. Go to https://vercel.com and sign in with GitHub.
+2. Click **Add New → Project** and import the `English` repository.
+3. Under **Environment Variables**, add `ANTHROPIC_API_KEY` with your key.
+4. Click **Deploy**. You'll get a link like `https://english-xxxx.vercel.app`. Open it on your phone and use **Add to Home Screen** to get an app icon.
+
+Anyone with the link can use it, and every sentence is charged to your API key. Set a monthly spend limit in the Anthropic Console (Settings → Limits) and don't share the link widely.
+
 ## How it works
 
-- `server.js` — Express server. `POST /api/explain` sends the sentence to Claude and uses structured outputs (a Zod schema) so the lesson always comes back in the same shape.
+- `lib/lesson.js` — sends the sentence to Claude and uses structured outputs (a Zod schema) so the lesson always comes back in the same shape.
+- `api/explain.js` — the Vercel serverless function for `POST /api/explain`; `vercel.json` configures it.
+- `server.js` — Express server for running it on your own computer.
 - `public/index.html` — the whole UI: input, voice input, lesson cards, text-to-speech, and history.
