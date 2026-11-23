@@ -44,3 +44,20 @@ Anyone with the link can use it, and every sentence is charged to your API key. 
 - `api/explain.js` — the Vercel serverless function for `POST /api/explain`; `vercel.json` configures it.
 - `server.js` — Express server for running it on your own computer.
 - `public/index.html` — the whole UI: input, voice input, lesson cards, text-to-speech, and history.
+
+---
+
+# Naksha — UPSC Map Quest (`public/geo/`)
+
+A map game for UPSC Prelims map questions. Open `/geo/` (for example `http://localhost:3000/geo/` or `https://<your-app>.vercel.app/geo/`). It needs no API key and runs entirely in the browser.
+
+- **Pin it**: a place is named; tap where it is on India's map. Points fall with distance (1,000 within 15 km).
+- **Spot it**: a place is marked (or a state shaded); choose its name from four options.
+- **Revise**: every place in a topic shown on the map, with a search box and the UPSC fact for each.
+
+Topics (275 places + 34 States/UTs): national parks & tiger reserves; lakes, wetlands & Ramsar sites; mountain passes & peaks; rivers, dams & waterfalls; history, art & culture; ports, islands, straits & space; minerals, energy & industry; States & UTs. Every answer shows the exam-relevant fact.
+
+Places you miss are saved in your browser under **My weak spots** and leave the list once you get them right. The Tropic of Cancer and the 82°30′E standard meridian are drawn as guide lines (toggle at the bottom right).
+
+- `public/geo/places.js` — the question bank. Add a place as `[name, lat, lon, state, fact]`.
+- `public/geo/map-data.js` — simplified state outlines from the [DataMeet India community maps](https://github.com/datameet/maps) (CC BY 4.0), following the Survey of India outline. Jammu & Kashmir and Ladakh are drawn as one shape (the source predates 2019).
